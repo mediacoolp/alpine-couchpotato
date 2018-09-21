@@ -8,7 +8,8 @@ RUN apk -U upgrade
 RUN apk add ca-certificates git openssl curl python py2-pip tzdata py2-openssl py-libxml2 py2-lxml
 RUN pip install --upgrade pip 
 RUN pip install  pyopenssl 
-RUN mkdir /sabnzbd/Movies /media-apps/data/CouchPotato 
+RUN mkdir -p /sabnzbd/Movies 
+RUN mkdir -p /media-apps/data/CouchPotato 
 RUN chown -R media:media /media-apps/data/CouchPotato /sabnzbd/Movies 
 RUN git clone --depth=1 https://github.com/RuudBurger/CouchPotatoServer.git /couchpotato 
 RUN chown -R media:media /couchpotato
