@@ -15,16 +15,16 @@ RUN apk -U upgrade && \
       pyopenssl && \
 \
     adduser -u media -S media -G media && \
-    mkdir /data /movies && \
-    chown -R media:media /data /movies && \
+    mkdir /sabnzbd/Movies /media-apps/data/CouchPotato && \
+    chown -R media:media /media-apps/data/CouchPotato /sabnzbd/Movies && \
 \
     git clone --depth=1 https://github.com/RuudBurger/CouchPotatoServer.git /couchpotato && \
-    chown -R media:users /couchpotato
+    chown -R media:media /couchpotato
 
 EXPOSE 5050
 
 USER media
 
-VOLUME ["/data", "/movies"]
+VOLUME ["/sabnzbd/Movies", "/media-apps/data/CouchPotato"]
 
-CMD ["/usr/bin/python", "/couchpotato/CouchPotato.py", "--data_dir", "/data", "--config_file", "/data/settings.conf", "--console_log"]
+CMD ["/usr/bin/python", "/couchpotato/CouchPotato.py", "--data_dir", "/media-apps/data/CouchPotato", "--config_file", "/media-apps/data/CouchPotato/settings.conf", "--console_log"]
