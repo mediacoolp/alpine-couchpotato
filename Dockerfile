@@ -14,7 +14,7 @@ RUN apk -U upgrade && \
     pip install \
       pyopenssl && \
 \
-    adduser -u media -S media -G media && \
+    adduser  media && \
     mkdir /sabnzbd/Movies /media-apps/data/CouchPotato && \
     chown -R media:media /media-apps/data/CouchPotato /sabnzbd/Movies && \
 \
