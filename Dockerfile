@@ -5,7 +5,7 @@ RUN set -x ; \
 adduser -u 1000 -D -S -G  media media  && exit 0 ; exit 1
 
 RUN apk -U upgrade \
-RUN apk add --no-cache ca-certificates git openssl curl python py2-pip tzdata py2-openssl py-libxml2 py2-lxml
+RUN apk add ca-certificates git openssl curl python py2-pip tzdata py2-openssl py-libxml2 py2-lxml
 RUN pip install --upgrade pip 
 RUN pip install --upgrade  pyopenssl 
 RUN mkdir /sabnzbd/Movies /media-apps/data/CouchPotato 
