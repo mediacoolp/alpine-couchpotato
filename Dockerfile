@@ -12,9 +12,9 @@ RUN apk -U upgrade && \
       py2-openssl py-libxml2 py2-lxml && \
 \
     pip install --upgrade pip && \
-     pip install pyopenssl && \
+     pip install --upgrade  pyopenssl && \
 \
-   groupadd -g 1000 media && useradd -m -u 1000 -g media && \
+   addgroup -g 1000 -S media && adduser -u 1000 -D -S -G media media && \
     mkdir /sabnzbd/Movies /media-apps/data/CouchPotato && \
     chown -R media:media /media-apps/data/CouchPotato /sabnzbd/Movies && \
 \
