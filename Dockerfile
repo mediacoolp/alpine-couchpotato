@@ -1,6 +1,6 @@
 FROM alpine:3.7
 
-RUN apk -U upgrade && \
+RUN set -x apk -U upgrade && \
     apk add --no-cache \
       ca-certificates \
       git \
